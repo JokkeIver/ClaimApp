@@ -12,11 +12,17 @@ public class GUI {
     JPanel basePanel = create22CardFactions(); 
     JPanel extraPanel = create10CardFactions();
     JPanel factionsPanel = new JPanel();
+    JPanel btnWrapper = new JPanel();
+    btnWrapper.setLayout(new FlowLayout(FlowLayout.CENTER));
+    JButton startBtn = new JButton("Ready!");
+    btnWrapper.add(startBtn);
+
     factionsPanel.setLayout(new BoxLayout(factionsPanel, BoxLayout.Y_AXIS));
 
     factionsPanel.add(basePanel);
     factionsPanel.add(new JSeparator(SwingConstants.HORIZONTAL));
     factionsPanel.add(extraPanel);
+    factionsPanel.add(btnWrapper);
 // ── Add the panels to the mainframe ─────────────────────────────────
     mainWindow.add(factionsPanel);
 
@@ -53,7 +59,7 @@ public class GUI {
   public JPanel create10CardFactions() {
     JPanel basePanel = new JPanel();
     JPanel factions = new JPanel();
-    JLabel header = new JLabel("Choose 3 10-card factions:", SwingConstants.CENTER);
+    JLabel header = new JLabel("Choose 3 of the 10-card factions:", SwingConstants.CENTER);
     basePanel.setLayout(new BorderLayout());
     factions.setLayout(new GridLayout(0,2));
 
